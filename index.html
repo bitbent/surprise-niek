@@ -20,11 +20,19 @@
             font-size: 1.8em;
             color: #0056b3;
         }
-        iframe {
+        .iframe-container {
             width: 100%;
-            height: 90vh;
-            border: none;
+            height: 500px; /* Set the height to whatever fixed size you want */
             overflow: hidden;
+            position: relative;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: -100px; /* Adjust this value to vertically position the content */
+            left: 0;
+            width: 100%;
+            height: 800px; /* Make this large enough to show the content you want */
+            border: none;
         }
         .footer {
             margin-top: 10px;
@@ -36,12 +44,12 @@
 <body>
     <div class="container">
         <h1>Spreekwoorden en Gezegden</h1>
-        <!-- Embedded iframe targeting the specific division -->
-        <iframe src="https://www.woorden.org/spreekwoord.php" scrolling="yes"></iframe>
+        <div class="iframe-container">
+            <iframe src="https://www.woorden.org/spreekwoord.php" scrolling="no"></iframe>
+        </div>
         <div class="footer">
             <p>Bron: <a href="https://www.woorden.org/spreekwoord.php" target="_blank">Woorden.org</a></p>
         </div>
     </div>
 </body>
 </html>
-
